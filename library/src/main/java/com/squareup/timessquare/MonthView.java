@@ -52,7 +52,8 @@ public class MonthView extends LinearLayout {
     for (int offset = 0; offset < 7; offset++) {
       today.set(Calendar.DAY_OF_WEEK, getDayOfWeek(firstDayOfWeek, offset, view.isRtl));
       final TextView textView = (TextView) headerRow.getChildAt(offset);
-      textView.setText(weekdayNameFormat.format(today.getTime()));
+      String nameWeek = weekdayNameFormat.format(today.getTime()).substring(0,1).toUpperCase();
+      textView.setText(nameWeek);
     }
     today.set(Calendar.DAY_OF_WEEK, originalDayOfWeek);
     view.listener = listener;
@@ -97,7 +98,7 @@ public class MonthView extends LinearLayout {
       boolean displayOnly, Typeface titleTypeface, Typeface dateTypeface) {
     Logr.d("Initializing MonthView (%d) for %s", System.identityHashCode(this), month);
     long start = System.currentTimeMillis();
-    title.setText(month.getLabel());
+    title.setText(month.getLabel().toUpperCase());
 
     final int numRows = cells.size();
     grid.setNumRows(numRows);
@@ -126,6 +127,7 @@ public class MonthView extends LinearLayout {
           cellView.setHighlighted(cell.isHighlighted());
           cellView.setTag(cell);
 
+
           if (null != decorators) {
             for (CalendarCellDecorator decorator : decorators) {
               decorator.decorate(cellView, cell.getDate());
@@ -133,7 +135,7 @@ public class MonthView extends LinearLayout {
           }
         }
       } else {
-        weekRow.setVisibility(GONE);
+        //weekRow.setVisibility(INVISIBLE);
       }
     }
 

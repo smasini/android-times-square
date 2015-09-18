@@ -3,6 +3,7 @@ package com.squareup.timessquare.sample;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +59,15 @@ public class SampleTimesSquareActivity extends Activity {
     final Button customized = (Button) findViewById(R.id.button_customized);
     final Button decorator = (Button) findViewById(R.id.button_decorator);
     final Button rtl = (Button) findViewById(R.id.button_rtl);
+    final Button grid = (Button) findViewById(R.id.button_grid);
+
+    grid.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent intent = new Intent(SampleTimesSquareActivity.this, SampleCalendarGridActivity.class);
+        startActivity(intent);
+      }
+    });
 
     modeButtons.addAll(Arrays.asList(single, multi, range, displayOnly, decorator));
 

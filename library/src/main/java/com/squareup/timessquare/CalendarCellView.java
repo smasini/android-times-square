@@ -3,6 +3,7 @@
 package com.squareup.timessquare;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import com.squareup.timessquare.MonthCellDescriptor.RangeState;
@@ -106,5 +107,20 @@ public class CalendarCellView extends TextView {
     }
 
     return drawableState;
+  }
+
+  @Override
+  public void setEnabled(boolean enabled) {
+    //super.setEnabled(enabled);
+    if(enabled)
+      super.setEnabled(enabled);
+    else {
+      this.setText("");
+      this.setEnabled(true);
+      if(android.os.Build.VERSION.SDK_INT>= Build.VERSION_CODES.JELLY_BEAN)
+        this.setBackground(null);
+      else
+        this.setBackgroundDrawable(null);
+    }
   }
 }

@@ -10,6 +10,16 @@
     <attr name="tsquare_headerTextColor" format="color"/>
   </declare-styleable>
 
+  <declare-styleable name="CalendarPickerGridView">
+    <attr name="android:background"/>
+    <attr name="tsquaregrid_dividerColor" format="color"/>
+    <attr name="tsquaregrid_dayBackground" format="reference"/>
+    <attr name="tsquaregrid_dayTextColor" format="color"/>
+    <attr name="tsquaregrid_titleTextColor" format="color"/>
+    <attr name="tsquaregrid_displayHeader" format="boolean"/>
+    <attr name="tsquaregrid_headerTextColor" format="color"/>
+  </declare-styleable>
+
   <declare-styleable name="calendar_cell">
     <attr name="tsquare_state_selectable" format="boolean" />
     <attr name="tsquare_state_current_month" format="boolean" />

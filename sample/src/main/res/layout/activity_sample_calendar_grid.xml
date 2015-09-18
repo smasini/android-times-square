@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.squareup.timessquare.sample.SampleCalendarGridActivity">
+
+    <com.squareup.timessquare.CalendarPickerGridView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay"
+        android:clipToPadding="false"
+        android:background="@color/white"
+        android:numColumns="4"
+        android:horizontalSpacing="16dp"
+        android:verticalSpacing="8dp"
+        app:tsquare_dayBackground="@drawable/custom_calendar_bg_selector"
+        app:tsquare_dividerColor="@color/transparent"
+        app:tsquare_dayTextColor="@color/custom_calendar_text_selector"
+
+        />
+
+</RelativeLayout>

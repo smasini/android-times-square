@@ -26,6 +26,7 @@ public class CalendarGridView extends ViewGroup {
   private static final float FLOAT_FUDGE = 0.5f;
 
   private final Paint dividerPaint = new Paint();
+
   private int oldWidthMeasureSize;
   private int oldNumRows;
 
